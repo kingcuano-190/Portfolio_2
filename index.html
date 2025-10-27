@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-		<title>Portfolio &#8211; King Cuaño</title>
+		<title>King Cuaño</title>
 <meta name="robots" content="noindex, nofollow">
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 	<link rel="alternate" type="application/rss+xml" title="King Cuaño &raquo; Feed" href="https://tengenteng.shop/feed/">
@@ -1665,6 +1665,33 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script src="./js/elementor-pro-assets-js-elements-handlers.min.js" id="pro-elements-handlers-js"></script>
 			<script data-category="functional">
 											</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const bars = document.querySelectorAll('.elementor-progress-bar');
+
+  function showBars() {
+    bars.forEach(bar => {
+      const rect = bar.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (inView && !bar.classList.contains('filled')) {
+        const width = bar.getAttribute('data-max') + '%';
+        bar.style.transition = 'width 2s ease';
+        bar.style.width = width;
+        bar.classList.add('filled');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', showBars);
+  showBars(); // run once on load
+});
+</script>
+
+
+
+	
 				</body>
 
 
@@ -1673,5 +1700,6 @@ Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3
 
 
 Served from: tengenteng.shop @ 2025-10-27 17:15:41 by W3 Total Cache
+
 -->
 </html>
